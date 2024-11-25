@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Employees</title>
+    <!-- ========== Start FontAwesome ========== -->
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <!-- ========== End FontAwesome ========== -->
+
+    <!-- ========== Start Bootstrap CSS ========== -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <!-- ========== End Bootstrap CSS ========== -->
+
+    <!-- ========== Start Main CSS ========== -->
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <!-- ========== End Main CSS ========== -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Manage <span>Employees</span></h2>
+      </div>
+
+      <!-- Form Section -->
+      <div class="form-container">
+        <div id="employee-form">
+          <div class="mb-3">
+            <label for="employeeName" class="form-label">Name :</label>
+            <input
+              oninput="validationInputs( this  ,  'msgName')"
+              type="text"
+              class="form-control"
+              id="employeeName"
+              placeholder="Enter Name"
+            />
+            <p id="msgName" class="alert alert-danger mt-1 d-none">
+              Please enter a valid name containing both a first name and a last
+              name, separated by a space. At Least 6 letter
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="employeePosition" class="form-label">Position :</label>
+            <input
+              oninput="validationInputs( this  ,  'msgPosition')"
+              type="text"
+              class="form-control"
+              id="employeePosition"
+              placeholder="Enter Position"
+            />
+            <p id="msgPosition" class="alert alert-danger mt-1 d-none">
+              Please enter a valid position title. The title must start with a
+              capital letter and include one of the following words: Designer,
+              Developer, or Analyst.
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="employeeEmail" class="form-label">Email :</label>
+            <input
+              oninput="validationInputs( this  ,  'msgEmail')"
+              type="email"
+              class="form-control"
+              id="employeeEmail"
+              placeholder="Enter Email"
+            />
+            <p id="msgEmail" class="alert alert-danger mt-1 d-none">
+              Please enter a valid address. At Least four Letters
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="employeeAddress" class="form-label">Address :</label>
+            <input
+              oninput="validationInputs( this  ,  'msgAddress')"
+              type="text"
+              class="form-control"
+              id="employeeAddress"
+              placeholder="Enter Address"
+            />
+            <p id="msgAddress" class="alert alert-danger mt-1 d-none">
+              Please enter a valid address. At Least four Letters
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="employeePhone" class="form-label">Phone :</label>
+            <input
+              oninput="validationInputs( this  ,  'msgPhone')"
+              type="tel"
+              class="form-control"
+              id="employeePhone"
+              placeholder="Enter Phone"
+            />
+            <p id="msgPhone" class="alert alert-danger mt-1 d-none">
+              Please enter a valid Egyptian mobile phone number. The number
+              should start with one of the following prefixes: 010, 011, 012, or
+              015, followed by 8 digits.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="buttons d-flex justify-content-end mb-3 gap-2">
+        <button
+          id="addEmployeeData"
+          class="btn btn-success"
+          onclick="addEmplyee()"
+        >
+          Add New Employee
+        </button>
+        <button
+          id="updEmployeeData"
+          onclick="updateData()"
+          class="btn btn-warning d-none"
+        >
+          Update Employee Data
+        </button>
+        <button onclick="deleteAllData()" class="btn btn-danger delete">
+          Delete All
+        </button>
+      </div>
+      <div class="table-responsive">
+        <input
+          oninput="searchData()"
+          id="serachEmployeeInfo"
+          type="search"
+          class="form-control w-50 mx-auto my-4"
+          placeholder="Search By position ......."
+        />
+        <table class="employee-table table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" /></th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tEmployeeData"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <span>Showing 5 out of 25 entries</span>
+        <div class="pages">
+          <button>Previous</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Js/index.js"></script>
+  </body>
+</html>
