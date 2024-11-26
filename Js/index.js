@@ -157,7 +157,7 @@ function validationInputs(element, msgId) {
   var regex = {
     employeeName: /^[A-Z][a-zA-Z ]{6,18}$/,
     employeePosition: /^[A-Z][a-zA-Z-]{2,14}\s(designer|developer|analyst)$/i,
-    employeeEmail: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
+    employeeEmail: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
     employeeAddress: /^[A-Za-z0-9\s,.-]{4,}$/,
     employeePhone: /^(?:\+20|0)(10|11|12|15)[0-9]{8}$/,
   };
