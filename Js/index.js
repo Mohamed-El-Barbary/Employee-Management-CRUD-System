@@ -93,7 +93,7 @@ function columnsData(i) {
               <td>${employeeList[i].address}</td>
               <td>${employeeList[i].phone}</td>
               <td>
-                <button onclick="setUpdate(${i})" class="btn btn-outline-warning mb-sm-2 mb-md-0">
+                <button onclick="setUpdate(${i})" class="btn btn-outline-warning mb-1 mb-md-0">
                   <i class="fa-solid fa-pen"></i>
                 </button>
                 <button onclick="deleteEmployeeData(${i})" class="btn btn-outline-danger">
